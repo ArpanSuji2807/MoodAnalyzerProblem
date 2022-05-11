@@ -9,11 +9,17 @@
         }
         public string MoodAnalyze()
         {
-            if(message.ToLower().Contains("sad"))
+            try
             {
-                return "Sad";
+                if (message.ToLower().Contains("sad"))
+                {
+                    return "Sad";
+                }
+                return "Happy";
+            }catch(Exception)
+            {
+                return "Happy";
             }
-            return "Happy";
         }
     }
 }

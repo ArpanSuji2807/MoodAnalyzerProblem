@@ -6,9 +6,9 @@ namespace MoodAnalyzerTest
     public class MoodTest
     {
        [Test]
-       public void WhenAnalyzeMoodTest_ShouldGive_Output_As_Happy()
+       public void WhenAnalyzeMoodTest_InputAsNull_ShouldGive_Output_As_Happy()
         {
-            AnanlyseMood moodAnalyzer = new AnanlyseMood("I am in Happy Mood");
+            AnanlyseMood moodAnalyzer = new AnanlyseMood(null);
             string actual=moodAnalyzer.MoodAnalyze();
             Assert.AreEqual(actual,"Happy");
         }
