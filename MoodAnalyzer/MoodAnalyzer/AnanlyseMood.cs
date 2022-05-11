@@ -11,14 +11,23 @@
         {
             try
             {
+                if (message == null)
+                {
+                    throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.NULL_MOOD, "Message is Null");
+                }
+                if (message.Equals(""))
+                {
+                    throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.EMPTY_MOOD, "Message is Empty");
+
+                }
                 if (message.ToLower().Contains("sad"))
                 {
                     return "Sad";
                 }
                 return "Happy";
-            }catch(Exception)
+            }catch(MoodAnalyserException ex)
             {
-                return "Happy";
+                return ex.Message;
             }
         }
     }
