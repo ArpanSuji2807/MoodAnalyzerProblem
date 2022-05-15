@@ -5,7 +5,9 @@
         string message;
 
         public AnanlyseMood()
-        { }
+        { 
+
+        }
         public AnanlyseMood(string message)
         {
             this .message = message;
